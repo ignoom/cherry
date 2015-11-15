@@ -11,9 +11,18 @@
 {{/md-navbar}}
 <!-- Adding a nav bar -->
 <h2 id="title">Welcome to Ember.js</h2>
+{{#if session.isAuthenticated}}
+  <p><a  action 'invalidateSession' >Logout</a></p>}}
+{{else}}
+  {{#link-to 'login'}}
+    Login
+  {{/link-to}}
+  <!-- <p><a  action 'sessionRequiresAuthentication' >Login</a></p>}} -->
+{{/if}}
 
-
+<div class=main>
 {{outlet}}
+</div>
 
 {{!-- ember-cli-materialize modal container --}}
 {{md-modal-container}}
