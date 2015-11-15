@@ -1,3 +1,19 @@
-<h2 id="title">Welcome to Ember</h2>
+<!--TODO make  NavBAR a component -->
+{{#md-navbar name='cherry-nav' class='indigo'}}
+  <!-- A workaround to get the "active" class
+    to apply to the active <li> automatically -->
+  {{#link-to 'index' tagName='li'}}
+    {{link-to 'Navbar' 'index'}}
+  {{/link-to}}
+  {{#link-to 'index' tagName='li'}}
+    {{link-to 'Tabs' 'index'}}
+  {{/link-to}}
+{{/md-navbar}}
+<!-- Adding a nav bar -->
+<h2 id="title">Welcome to Ember.js</h2>
+
 
 {{outlet}}
+
+{{!-- ember-cli-materialize modal container --}}
+{{md-modal-container}}
