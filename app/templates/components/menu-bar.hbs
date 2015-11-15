@@ -1,0 +1,19 @@
+{{#md-navbar name='cherry-nav' class='indigo'}}
+  <!-- A workaround to get the "active" class
+    to apply to the active <li> automatically -->
+  {{#link-to 'index' tagName='li'}}
+    {{link-to 'Home' 'index'}}
+  {{/link-to}}
+  {{#if session.isAuthenticated}}
+    {{#link-to 'login' tagName='li'}}
+      <a  action 'invalidateSession' >Logout</a>
+      <!-- This invalidateSession is binded to routes/application.js -->
+    {{/link-to}}
+  {{else}}
+    {{#link-to 'login' tagName='li'}}
+      {{link-to 'Login' 'login'}}
+    {{/link-to}}
+    <!-- <p><a  action 'sessionRequiresAuthentication' >Login</a></p>}} -->
+  {{/if}}
+  {{yield}}
+{{/md-navbar}}

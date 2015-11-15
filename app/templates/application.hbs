@@ -1,25 +1,6 @@
-<!--TODO make  NavBAR a component -->
-{{#md-navbar name='cherry-nav' class='indigo'}}
-  <!-- A workaround to get the "active" class
-    to apply to the active <li> automatically -->
-  {{#link-to 'index' tagName='li'}}
-    {{link-to 'Navbar' 'index'}}
-  {{/link-to}}
-  {{#link-to 'index' tagName='li'}}
-    {{link-to 'Tabs' 'index'}}
-  {{/link-to}}
-{{/md-navbar}}
 <!-- Adding a nav bar -->
-<h2 id="title">Welcome to Ember.js</h2>
-{{#if session.isAuthenticated}}
-  <p><a  action 'invalidateSession' >Logout</a></p>}}
-{{else}}
-  {{#link-to 'login'}}
-    Login
-  {{/link-to}}
-  <!-- <p><a  action 'sessionRequiresAuthentication' >Login</a></p>}} -->
-{{/if}}
-
+{{menu-bar}}
+<!-- End of nav bar -->
 <div class=main>
 {{outlet}}
 </div>
